@@ -1,2 +1,7 @@
-PSD to HTML + SASS. Hover states included.
-As it is test task, margins and pixel perfect was ignored to only demonstrate ability to work with SASS.
+Complete products carousel widget.
+
+Dependencies:
+Jquery 2.x.x https://github.com/jquery/jquery
+Slick 1.5.x https://github.com/kenwheeler/slick
+
+
