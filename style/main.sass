@@ -3,12 +3,13 @@
 @import utilities
 
 
+//global selectors
 body
 	font-family: $fontPrimary
 	color: $colorPrimary
 
 	*
-		
+		box-sizing: border-box
 		vertical-align: top
 		position: relative
 
@@ -16,6 +17,7 @@ h1
 	font-size: $fontSizeL
 	text-transform: uppercase
 	font-weight: bold
+	margin-bottom: 40px
 
 span
 	color: $colorSecondary
@@ -37,108 +39,118 @@ a
 #widget-standart
 	width: $sectionWidth
 	margin: 20px auto
-	padding: 0 20px
 
 	.section-header
 		text-align: center
-
-		h1.main-heading
 			
-
 		ul.nav-bullet
 			display: inline-block
 			width: 100%
 			position: absolute
 			left: 0px
+			top: 5px
 
-		li.nav-bullet-item
-			display: inline-block
-			background: $colorSecondary
-			+squareSize(14px)
-			+borderRadius(20px)
-			margin-right: $spacingBullet
+			li
+				display: inline-block
+				background: $colorSecondary
+				+squareSize($bulletSize)
+				+borderRadius($borderCircle)
+				margin: $marginBullet
+				cursor: pointer
 
-		li.nav-bullet-selected
-			background: $colorBulletSelected
-			border: 1px solid $colorSecondary
+			li.slick-active
+				background: $colorBulletSelected
+				border: 2px solid $colorSecondary
 
 		.sponsor-link
 			font-size: $fontSizeS
 			padding-right: 30px
 			height: 28px
+			line-height: 28px
 			background: url(../images/logoSponsor.png) no-repeat right center
-			padding-top: 5px
-			
+						
 	.products-holder
 		text-align: center
+		overflow: hidden
 
 		.product
 			display: inline-block
 			width: $productWidth
-			margin-right: $spacingProduct
+			margin: $marginProduct
 			text-align: left
 			clear: both
 
 
 			a.product-image
 				display: block
-				margin: $spacingProductImage
 				width: 100%
 				text-align: center
-				
+				margin: $marginProductImage
+				+squareSize($imageViewport)
+				vertical-align: middle
+
+				img
+					padding-top: 5px
 
 				span.overlay
 					display: block
 					opacity: 0
 					position: absolute
+					top: 0px
+					+squareSize(100%)
+					background: $colorSecondary
 					+transition($globalTransition)
-
-			
+								
 			a.product-name
 				display: block
-				color: $colorPrimary
 				text-transform: uppercase
-				line-height: 14px
+				color: $colorPrimary
 				font-size: $fontSizeM
-				margin: $spacingProductTitle 0
+				margin: $marginProductTitle 
+				line-height: $lineHeightTitle
 
 			span.deal-source
 				font-size: $fontSizeM
+				cursor: pointer
 
 			span.price
 				color: $colorPrice
 				font-size: $fontSizeM
 				font-weight: bold
+				cursor: pointer
+
+	.prevArrow, .nextArrow
+		+transition($arrowTransition)
+		display: block
+		width: 19px
+		height: 36px
+		position: absolute
+		opacity: 0
+		background-repeat: no-repeat
+		top: 185px
+		cursor: pointer
+		z-index: 2
+
+	.prevArrow
+		background-image: $prevArrow
+		left: -78px
+
+	.nextArrow
+		background-image: $nextArrow
+		right: -78px
+
+
 
 		//hover states
 
-		.product:hover a.product-image span.overlay
-			+squareSize(100%)
-			background: $colorSecondary
-			opacity: 0.1
-			top: 0px
+#widget-standart .product:hover a.product-image span.overlay
+	opacity: 0.2
 
 
-section#widget-standart:before, section#widget-standart:after
-	content: ""
-	display: block
-	width: 19px
-	height: 36px
-	position: absolute
-	opacity: 0
-	background-repeat: no-repeat
-	top: 140px
-	+transition($globalTransition)
-	cursor: pointer
-
-section#widget-standart:hover:before
-	background-image: url(../images/arrowL.png)
-	left: 0px
+section#widget-standart:hover .prevArrow
 	opacity: 1
 
-section#widget-standart:hover:after
-	background-image: url(../images/arrowR.png)
-	right: 0px
+section#widget-standart:hover .nextArrow
 	opacity: 1
 
 
