@@ -1,0 +1,177 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.clear {
+  clear: both; }
+
+.floatR {
+  float: right; }
+
+.floatL {
+  float: left; }
+
+body {
+  font-family: HevleticaNeue, Helvetica, Arial, sans-serif;
+  color: #000; }
+  body * {
+    vertical-align: top;
+    position: relative; }
+
+h1 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+span {
+  color: #8f8f8f; }
+
+img {
+  display: inline-block; }
+
+a {
+  outline: none;
+  text-decoration: none; }
+
+#main {
+  width: 100%;
+  background-color: #fff; }
+
+#widget-standart {
+  width: 1170px;
+  margin: 20px auto;
+  padding: 0 20px; }
+  #widget-standart .section-header {
+    text-align: center; }
+    #widget-standart .section-header ul.nav-bullet {
+      display: inline-block;
+      width: 100%;
+      position: absolute;
+      left: 0px; }
+    #widget-standart .section-header li.nav-bullet-item {
+      display: inline-block;
+      background: #8f8f8f;
+      width: 14px;
+      height: 14px;
+      -webkit-border-radius: 20px;
+      -ms-border-radius: 20px;
+      border-radius: 20px;
+      margin-right: 5px; }
+    #widget-standart .section-header li.nav-bullet-selected {
+      background: transparent;
+      border: 1px solid #8f8f8f; }
+    #widget-standart .section-header .sponsor-link {
+      font-size: 12px;
+      padding-right: 30px;
+      height: 28px;
+      background: url(../images/logoSponsor.png) no-repeat right center;
+      padding-top: 5px; }
+  #widget-standart .products-holder {
+    text-align: center; }
+    #widget-standart .products-holder .product {
+      display: inline-block;
+      width: 270px;
+      margin-right: 10px;
+      text-align: left;
+      clear: both; }
+      #widget-standart .products-holder .product a.product-image {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center; }
+        #widget-standart .products-holder .product a.product-image span.overlay {
+          display: block;
+          opacity: 0;
+          position: absolute;
+          -webkit-transition: 0.2s linear;
+          -moz-transition: 0.2s linear;
+          -o-transition: 0.2s linear;
+          transition: 0.2s linear; }
+      #widget-standart .products-holder .product a.product-name {
+        display: block;
+        color: #000;
+        text-transform: uppercase;
+        line-height: 14px;
+        font-size: 14px;
+        margin: 10px 0; }
+      #widget-standart .products-holder .product span.deal-source {
+        font-size: 14px; }
+      #widget-standart .products-holder .product span.price {
+        color: #ff0000;
+        font-size: 14px;
+        font-weight: bold; }
+    #widget-standart .products-holder .product:hover a.product-image span.overlay {
+      width: 100%;
+      height: 100%;
+      background: #8f8f8f;
+      opacity: 0.1;
+      top: 0px; }
+
+section#widget-standart:before, section#widget-standart:after {
+  content: "";
+  display: block;
+  width: 19px;
+  height: 36px;
+  position: absolute;
+  opacity: 0;
+  background-repeat: no-repeat;
+  top: 140px;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+  cursor: pointer; }
+
+section#widget-standart:hover:before {
+  background-image: url(../images/arrowL.png);
+  left: 0px;
+  opacity: 1; }
+
+section#widget-standart:hover:after {
+  background-image: url(../images/arrowR.png);
+  right: 0px;
+  opacity: 1; }
+
+/*# sourceMappingURL=main.css.map */

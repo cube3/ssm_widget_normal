@@ -1,0 +1,31 @@
+// This file contains utilities to execute on selectors and functional classes
+
+@import settings
+
+=squareSize($size)
+	width:	$size
+	height:	$size
+
+=borderRadius($radius)
+	-webkit-border-radius: $radius
+	-ms-border-radius:     $radius
+	border-radius:         $radius
+
+=transition($transitOptions)
+	-webkit-transition: $transitOptions
+	-moz-transition: $transitOptions
+	-o-transition: $transitOptions
+	transition: $transitOptions
+
+.clear
+	clear: both
+
+.floatR
+	float: right
+
+.floatL
+	float: left
+
+
+
+

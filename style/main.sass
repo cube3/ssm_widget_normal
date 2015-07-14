@@ -1,0 +1,180 @@
+@import reset
+@import settings
+@import utilities
+
+
+body
+	font-family: $fontPrimary
+	color: $colorPrimary
+
+	*
+		
+		vertical-align: top
+		position: relative
+
+h1
+	font-size: $fontSizeL
+	text-transform: uppercase
+	font-weight: bold
+
+span
+	color: $colorSecondary
+
+img
+	display: inline-block
+
+a
+	outline: none
+	text-decoration: none
+
+//helpers
+
+.arrow
+	
+
+
+//general layout 
+
+#main
+	width: 100%
+	background-color: $colorBG
+
+#widget-standart
+	width: $sectionWidth
+	margin: 20px auto
+	padding: 0 20px
+
+	.section-header
+		text-align: center
+
+		h1.main-heading
+			
+
+		ul.nav-bullet
+			display: inline-block
+			width: 100%
+			position: absolute
+			left: 0px
+
+		li.nav-bullet-item
+			display: inline-block
+			background: $colorSecondary
+			+squareSize(14px)
+			+borderRadius(20px)
+			margin-right: $spacingBullet
+
+		li.nav-bullet-selected
+			background: $colorBulletSelected
+			border: 1px solid $colorSecondary
+
+		.sponsor-link
+			font-size: $fontSizeS
+			padding-right: 30px
+			height: 28px
+			background: url(../images/logoSponsor.png) no-repeat right center
+			padding-top: 5px
+			
+	.products-holder
+		text-align: center
+
+		.product
+			display: inline-block
+			width: $productWidth
+			margin-right: $spacingProduct
+			text-align: left
+			clear: both
+
+
+			a.product-image
+				display: block
+				margin: $spacingProductImage
+				width: 100%
+				text-align: center
+				
+
+				span.overlay
+					display: block
+					opacity: 0
+					position: absolute
+					+transition($globalTransition)
+
+			
+			a.product-name
+				display: block
+				color: $colorPrimary
+				text-transform: uppercase
+				line-height: 14px
+				font-size: $fontSizeM
+				margin: $spacingProductTitle 0
+
+			span.deal-source
+				font-size: $fontSizeM
+
+			span.price
+				color: $colorPrice
+				font-size: $fontSizeM
+				font-weight: bold
+
+		//hover states
+
+		.product:hover a.product-image span.overlay
+			+squareSize(100%)
+			background: $colorSecondary
+			opacity: 0.1
+			top: 0px
+
+
+section#widget-standart:before, section#widget-standart:after
+	content: ""
+	display: block
+	width: 19px
+	height: 36px
+	position: absolute
+	opacity: 0
+	background-repeat: no-repeat
+	top: 140px
+	+transition($globalTransition)
+	cursor: pointer
+
+section#widget-standart:hover:before
+	background-image: url(../images/arrowL.png)
+	left: 0px
+	opacity: 1
+
+section#widget-standart:hover:after
+	background-image: url(../images/arrowR.png)
+	right: 0px
+	opacity: 1
+
+
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+
+			
+			
+
+			
+
+
+
+
+
+
+
+
