@@ -35,13 +35,21 @@ a
 #main
 	width: 100%
 	background-color: $colorBG
+	padding: 0 30px
 
 #widget-standart
-	width: $sectionWidth
+	max-width: $sectionWidth
+	width: 100%
 	margin: 20px auto
+
 
 	.section-header
 		text-align: center
+
+		h1.main-heading
+			@media screen and (max-width: $screenMobile)
+				float: none
+				display: inline-block 
 			
 		ul.nav-bullet
 			display: inline-block
@@ -49,6 +57,10 @@ a
 			position: absolute
 			left: 0px
 			top: 5px
+
+			@media screen and (max-width: $screenS) 
+				display: none !important
+  				
 
 			li
 				display: inline-block
@@ -67,18 +79,44 @@ a
 			padding-right: 30px
 			height: 28px
 			line-height: 28px
-			background: url(../images/logoSponsor.png) no-repeat right center
+			background-position: right center
+			background-repeat: no-repeat
+			background-image: $sponsorInactive
+
+			@media screen and (max-width: $screenMobile)
+				display: none
+
+	.section-footer
+		@extend .section-header
+		display: none
+		margin: $marginSectionFooter
+		height: 1px
+
+		@media screen and (max-width: $screenMobile)
+			display: block
+			border-top: 1px solid $colorSecondary
+
+	.sponsor-link.mobile
+		@extend .sponsor-link
+		top: -15px
+		background-color: $colorBG
+		background-position: right 10px center
+		padding: $paddingFooterSponsorLink
+
+		@media screen and (max-width: $screenMobile)
+			display: inline-block
+
 						
 	.products-holder
-		text-align: center
 		overflow: hidden
 
 		.product
 			display: inline-block
-			width: $productWidth
 			margin: $marginProduct
-			text-align: left
 			clear: both
+
+			@media screen and (max-width: $screenM) 
+				margin: $marginProductNarrow
 
 
 			a.product-image
@@ -89,8 +127,13 @@ a
 				+squareSize($imageViewport)
 				vertical-align: middle
 
+				@media screen and (max-width: $screenDesktop) 
+				+squareSize(100%)
+				padding: 5px 0
+
 				img
 					padding-top: 5px
+					max-width: 100%
 
 				span.overlay
 					display: block
@@ -108,6 +151,8 @@ a
 				font-size: $fontSizeM
 				margin: $marginProductTitle 
 				line-height: $lineHeightTitle
+				height: 48px
+				overflow: hidden
 
 			span.deal-source
 				font-size: $fontSizeM
@@ -135,9 +180,15 @@ a
 		background-image: $prevArrow
 		left: -78px
 
+		@media screen and (max-width: $screenDesktop) 
+			left: -20px
+
 	.nextArrow
 		background-image: $nextArrow
 		right: -78px
+
+		@media screen and (max-width: $screenDesktop) 
+			right: -10px
 
 
 
@@ -147,11 +198,17 @@ a
 	opacity: 0.2
 
 
-section#widget-standart:hover .prevArrow
-	opacity: 1
+section#widget-standart:hover 
+	.prevArrow
+		opacity: 1
 
-section#widget-standart:hover .nextArrow
-	opacity: 1
+	.nextArrow
+		opacity: 1
+
+	.sponsor-link
+		background-image: $sponsorActive !important
+
+
 
 
 
